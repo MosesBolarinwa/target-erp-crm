@@ -29,7 +29,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center mb-2">ERP/CRM Portal</h1>
+        <h1 className="text-2xl font-bold text-center mb-2">Target CRM</h1>
         <p className="text-gray-500 text-center text-sm mb-6">Sign in to continue</p>
 
         {error && (
@@ -66,13 +66,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="mt-6 p-3 bg-gray-50 rounded text-xs text-gray-600">
-          <p className="font-medium mb-1">Test credentials:</p>
-          <p>admin@erp.com / admin123</p>
-          <p>sales@erp.com / sales123</p>
-          <p>warehouse@erp.com / warehouse123</p>
-          <p>accounts@erp.com / accounts123</p>
-        </div>
+        
       </div>
     </div>
   );
