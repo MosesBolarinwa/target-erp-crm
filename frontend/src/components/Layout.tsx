@@ -29,6 +29,7 @@ export default function Layout() {
           </span>
         </div>
         <nav className="flex-1 p-4 space-y-1">
+          <NavLink to="/dashboard" className={({ isActive }) => `block px-3 py-2 rounded text-sm ${isActive ? 'bg-slate-600' : 'hover:bg-slate-700'}`}>Dashboard</NavLink>
           {navItems.map(
             (item) =>
               user &&
