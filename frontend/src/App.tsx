@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useAuth } from './context/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { PermissionRoute } from './components/PermissionRoute';
 import Layout from './components/Layout';
@@ -14,17 +13,8 @@ import ChallanListPage from './pages/ChallanListPage';
 import ChallanFormPage from './pages/ChallanFormPage';
 import ChallanDetailPage from './pages/ChallanDetailPage';
 import ReportsPage from './pages/ReportsPage';
-import { hasPermission } from './types';
+import DashboardPage from './pages/DashboardPage';
 
-function HomeRedirect() {
-  const { user } = useAuth();
-  if (!user) return <Navigate to="/login" replace />;
-  if (hasPermission(user.role, 'manage_customers')) return <Navigate to="/customers" replace />;
-  if (hasPermission(user.role, 'manage_products')) return <Navigate to="/products" replace />;
-  if (hasPermission(user.role, 'manage_challans')) return <Navigate to="/challans" replace />;
-  if (hasPermission(user.role, 'view_reports')) return <Navigate to="/reports" replace />;
-  return <Navigate to="/login" replace />;
-}
 
 export default function App() {
   return (
@@ -37,7 +27,8 @@ export default function App() {
           </ProtectedRoute>
         }
       >
-        <Route path="/" element={<HomeRedirect />} />
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/customers" element={<PermissionRoute permission="manage_customers"><CustomerListPage /></PermissionRoute>} />
         <Route path="/customers/new" element={<PermissionRoute permission="manage_customers"><CustomerFormPage /></PermissionRoute>} />
         <Route path="/customers/:id" element={<PermissionRoute permission="manage_customers"><CustomerDetailPage /></PermissionRoute>} />
