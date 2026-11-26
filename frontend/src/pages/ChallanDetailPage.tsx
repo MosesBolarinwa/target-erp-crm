@@ -113,9 +113,9 @@ export default function ChallanDetailPage() {
               <tr key={li.id} className="border-t">
                 <td className="p-2">{li.productNameSnapshot}</td>
                 <td className="p-2 font-mono text-xs">{li.skuSnapshot}</td>
-                <td className="p-2 text-right">₹{Number(li.unitPriceSnapshot).toFixed(2)}</td>
+                <td className="p-2 text-right">${Number(li.unitPriceSnapshot).toFixed(2)}</td>
                 <td className="p-2 text-right">{li.quantity}</td>
-                <td className="p-2 text-right">₹{(Number(li.unitPriceSnapshot) * li.quantity).toFixed(2)}</td>
+                <td className="p-2 text-right">${(Number(li.unitPriceSnapshot) * li.quantity).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>
@@ -123,7 +123,7 @@ export default function ChallanDetailPage() {
             <tr>
               <td colSpan={3} className="p-2 font-medium">Total</td>
               <td className="p-2 text-right font-medium">{challan.totalQuantity}</td>
-              <td className="p-2 text-right font-medium">₹{totalAmount.toFixed(2)}</td>
+              <td className="p-2 text-right font-medium">${totalAmount.toFixed(2)}</td>
             </tr>
           </tfoot>
         </table>

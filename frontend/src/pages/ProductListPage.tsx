@@ -68,7 +68,7 @@ export default function ProductListPage() {
                   <td className="p-3">{p.name}</td>
                   <td className="p-3 font-mono text-xs">{p.sku}</td>
                   <td className="p-3">{p.category || '—'}</td>
-                  <td className="p-3 text-right">₹{Number(p.unitPrice).toFixed(2)}</td>
+                  <td className="p-3 text-right">${Number(p.unitPrice).toFixed(2)}</td>
                   <td className="p-3 text-right">
                     <span className={p.currentStock <= p.minStockAlert ? 'text-red-600 font-medium' : ''}>
                       {p.currentStock}

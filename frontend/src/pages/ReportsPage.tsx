@@ -48,7 +48,7 @@ export default function ReportsPage() {
         </div>
         <div className="bg-white p-4 rounded-lg shadow">
           <p className="text-sm text-gray-500">Total Revenue</p>
-          <p className="text-2xl font-bold">₹{totalRevenue.toFixed(2)}</p>
+          <p className="text-2xl font-bold">${totalRevenue.toFixed(2)}</p>
         </div>
       </div>
 
@@ -78,7 +78,7 @@ export default function ReportsPage() {
                     </td>
                     <td className="p-3">{c.customer?.name}</td>
                     <td className="p-3 text-right">{c.totalQuantity}</td>
-                    <td className="p-3 text-right">₹{amount.toFixed(2)}</td>
+                    <td className="p-3 text-right">${amount.toFixed(2)}</td>
                     <td className="p-3">{new Date(c.createdDate).toLocaleDateString()}</td>
                     <td className="p-3 text-right">
                       <button
