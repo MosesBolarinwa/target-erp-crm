@@ -20,9 +20,9 @@ export default function Layout() {
 
   return (
     <div className="flex min-h-screen">
-      <aside className="w-64 bg-slate-800 text-white flex flex-col">
+      <aside className="w-64 bg-blue-900 text-white flex flex-col">
         <div className="p-4 border-b border-slate-700">
-          <h1 className="text-lg font-bold">ERP/CRM Portal</h1>
+          <h1 className="text-lg font-bold">Target CRM</h1>
           <p className="text-sm text-slate-400 mt-1">{user?.name}</p>
           <span className="inline-block mt-1 px-2 py-0.5 text-xs bg-slate-700 rounded">
             {user?.role}
