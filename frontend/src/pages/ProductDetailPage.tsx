@@ -108,7 +108,7 @@ export default function ProductDetailPage() {
           </form>
         ) : (
           <dl className="grid grid-cols-3 gap-3 text-sm">
-            <div><dt className="text-gray-500">Price</dt><dd>₹{Number(product.unitPrice).toFixed(2)}</dd></div>
+            <div><dt className="text-gray-500">Price</dt><dd>${Number(product.unitPrice).toFixed(2)}</dd></div>
             <div><dt className="text-gray-500">Stock</dt><dd className={product.currentStock <= product.minStockAlert ? 'text-red-600 font-bold' : 'font-bold'}>{product.currentStock}</dd></div>
             <div><dt className="text-gray-500">Min Alert</dt><dd>{product.minStockAlert}</dd></div>
             <div><dt className="text-gray-500">Category</dt><dd>{product.category || '—'}</dd></div>
