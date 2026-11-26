@@ -79,8 +79,8 @@ export function generateInvoicePDF(
       .text('SKU', itemCodeX, y)
       .text('Description', descriptionX, y)
       .text('Qty', quantityX, y)
-      .text('Price (Rs.)', priceX, y)
-      .text('Amount (Rs.)', amountX, y);
+      .text('Price ($)', priceX, y)
+      .text('Amount ($)', amountX, y);
 
     doc
       .moveTo(50, y + 15)
@@ -112,8 +112,8 @@ export function generateInvoicePDF(
       .text(item.skuSnapshot, itemCodeX, position)
       .text(item.productNameSnapshot, descriptionX, position, { width: 180 })
       .text(item.quantity.toString(), quantityX, position)
-      .text(`Rs. ${unitPrice.toFixed(2)}`, priceX, position)
-      .text(`Rs. ${amount.toFixed(2)}`, amountX, position);
+      .text(`$${unitPrice.toFixed(2)}`, priceX, position)
+      .text(`$${amount.toFixed(2)}`, amountX, position);
 
     position += 25;
   });
@@ -138,12 +138,12 @@ export function generateInvoicePDF(
   doc
     .fontSize(10)
     .text('Subtotal:', 400, position)
-    .text(`Rs. ${subtotal.toFixed(2)}`, 480, position)
+    .text(`$${subtotal.toFixed(2)}`, 480, position)
     .text('GST / Tax (10%):', 400, position + 20)
-    .text(`Rs. ${tax.toFixed(2)}`, 480, position + 20)
+    .text(`$${tax.toFixed(2)}`, 480, position + 20)
     .fontSize(11)
     .text('Total:', 400, position + 40)
-    .text(`Rs. ${total.toFixed(2)}`, 480, position + 40);
+    .text(`$${total.toFixed(2)}`, 480, position + 40);
 
   // Footer
   doc
